@@ -11,9 +11,15 @@ function multiply(a, b) {
   
     for(let j = 0; j < bArray.length;  j++) {
       
-      let mult = bArray[j]*aArray[i];
-      
-      resultArray[i+j] = (resultArray[i+j]) ? resultArray[i+j] + mult : mult ;      
+      if(resultArray[i+j]) {
+        
+        resultArray[i+j] += bArray[j]*aArray[i];
+      }
+
+      else {
+        
+        resultArray[i+j] = bArray[j]*aArray[i];
+      }     
     }
   }
 
@@ -30,8 +36,8 @@ function multiply(a, b) {
       resultArray[i+1] += move;
     }
     
-    else if (move!=0){
-      resultArray[i+1] = move;
+    else if (move !=0){
+      resultArray[i+1] = move ;
     }
   }
   
